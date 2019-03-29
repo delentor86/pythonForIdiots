@@ -1,0 +1,27 @@
+
+def main():
+
+	test1 = int(input('Enter test grade 1: '))
+	test2 = int(input('Enter test grade 2: '))
+	test3 = int(input('Enter test grade 3: '))
+	test4 = int(input('Enter test grade 4: '))
+	test5 = int(input('Enter test grade 5: '))
+
+	totalPoints = (test1 + test2 + test3 + test4 + test5)
+	overallAverage = totalPoints / 5
+	
+	print(overallAverage,  str(determinGrade))
+
+
+def determinGrade(overallAverage):
+	if overallAverage >= 90 and overallAverage <= 100:
+		return 'A'
+	elif overallAverage >= 80 and overallAverage <= 89:
+		return 'B'
+	elif overallAverage >= 70 and overallAverage <= 79:
+		return 'C'
+	elif overallAverage >= 60 and overallAverage <= 69:
+		return 'D'
+	else:
+		return 'F'
+main()
