@@ -1,26 +1,41 @@
 
+#main function will ask for input from user and calculate average and store it for recall
 def main():
 
-	test1 = int(input('Enter test grade 1: '))
-	test2 = int(input('Enter test grade 2: '))
-	test3 = int(input('Enter test grade 3: '))
-	test4 = int(input('Enter test grade 4: '))
-	test5 = int(input('Enter test grade 5: '))
+	while True:
+		test1 = int(input('Enter test grade one: '))
+		if (test1<101 and test1>0):
+			break
+	while True:
+		test2 = int(input('Enter test grade two: '))
+		if (test2<101 and test2>0):
+			break	
+	while True:
+		test3 = int(input('Enter test grade three: '))
+		if (test3<101 and test3>0):
+			break
+	while True:
+		test4 = int(input('Enter test grade four: '))
+		if (test4<101 and test4>0):
+			break
+	while True:
+		test5 = int(input('Enter test grade five: '))
+		if (test5<101 and test5>0):
+			break
 
 	totalPoints = (test1 + test2 + test3 + test4 + test5)
-	overallAverage = totalPoints / 5
-	
-	print(overallAverage,  str(determinGrade))
+	average = totalPoints / 5
+	return average
 
-
-def determinGrade(overallAverage):
-	if overallAverage >= 90 and overallAverage <= 100:
+#determinGrade will assign a letter grade to average
+def determinGrade():
+	if average >= 90 and average <= 100:
 		return 'A'
-	elif overallAverage >= 80 and overallAverage <= 89:
+	elif average >= 80 and average <= 89:
 		return 'B'
-	elif overallAverage >= 70 and overallAverage <= 79:
+	elif average >= 70 and average <= 79:
 		return 'C'
-	elif overallAverage >= 60 and overallAverage <= 69:
+	elif average >= 60 and average <= 69:
 		return 'D'
 	else:
 		return 'F'
