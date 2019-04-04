@@ -15,7 +15,6 @@ main()
 
 def falling_distance():
 	gravity = 9.8
-	from hodge_Lab5b import main
 	fallingTime = main()
 	distance = (1/2)*gravity*(fallingTime**2)
-falling_distance()
+
