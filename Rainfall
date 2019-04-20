@@ -1,0 +1,68 @@
+def getRainfallAmounts( namesOfMonths ):
+    number_of_months_year = 12
+    totalRainfallList = []
+
+    for currentMonthIndex in range(number_of_months_year):
+        monthlyRainfall = float(input("Please enter the rainfall amount for " +\
+            namesOfMonths [currentMonthIndex]+ ":  "))
+        totalRainfallList.append(monthlyRainfall)
+    
+    return totalRainfallList
+
+def calculateTotalRainfall( totalRainfallList ):
+    totalRainfall = 0
+
+    for currentMonthRainfallIndex in range(len(totalRainfallList)):
+        totalRainfall = totalRainfall +\
+            totalRainfallList[currentMonthRainfallIndex]
+    return totalRainfall
+
+def calculateAverageMonthlyRainfall( totalRainfall, totalRainfallList ):
+    numberOfMonths = len(totalRainfallList)
+    averageRainfall = calculateTotalRainfall( totalRainfallList ) / numberOfMonths
+    return averageRainfall
+
+def findHighestRainfallMonth( totalRainfallList, namesOfMonths ):
+    highestRainfallAmount = max(totalRainfallList)
+    highestRainfallAmountIndex = totalRainfallList.index(highestRainfallAmount)
+    return namesOfMonths[highestRainfallAmountIndex]
+
+def findLowestRainfallMonth ( totalRainfallList, namesOfMonths ):
+    lowestRainfallAmount = min( totalRainfallList )
+    lowestRainfallAmountIndex = totalRainfallList.index( lowestRainfallAmount )
+    return namesOfMonths[lowestRainfallAmountIndex]
+
+def printRainfallStatistics( totalRainfallList, namesOfMonths, totalRainfall, \
+    averageRainfall, highestRainfallMonth, lowestRainfallMonth):
+
+    print()
+
+    for currentMonthIndex in range(len(namesOfMonths)):
+        print(namesOfMonths[ currentMonthIndex ], "has a rainfall amount of",\
+            totalRainfallList[currentMonthIndex])
+
+
+    print ("\nTotal Rainfall: " + str(totalRainfall), "Average rainfall: " +  \
+         format(averageRainfall, ".2f"), highestRainfallMonth + " has the highest rainfall.", \
+            lowestRainfallMonth + " has the lowest rainfall.", sep = "\n" )
+
+def main():
+    namesOfMonths = [ "January", "February", "March", "April", "May", "June", "July", \
+        "August", "September", "October", "November", "December"]
+
+    totalRainfallList = []
+
+    totalRainfallList = getRainfallAmounts( namesOfMonths )
+
+    totalRainfall = calculateTotalRainfall( totalRainfallList )
+
+    averageMonthlyRainfall = calculateAverageMonthlyRainfall (totalRainfall, totalRainfallList)
+
+    highestRainfallAmtMonth = findHighestRainfallMonth( totalRainfallList, namesOfMonths )
+
+    lowestRainfallAmtMonth = findLowestRainfallMonth( totalRainfallList, namesOfMonths )
+
+    printRainfallStatistics( totalRainfallList, namesOfMonths, totalRainfall,\
+         averageMonthlyRainfall, findHighestRainfallMonth, findLowestRainfallMonth )
+
+main()
