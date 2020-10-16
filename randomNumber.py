@@ -1,3 +1,4 @@
+#getting variable for random minute value for timer
 def randomNumber():
     
     import random
@@ -12,9 +13,10 @@ def randomNumber():
         timerNumber = rollTwo
     else:
         timerNumber = rollThree
-    print(timerNumber) 
-    
+    return(timerNumber)
 
-randomNumber()
-
-
+#main function will call randomNumber function and display results
+def main():
+    timer = randomNumber()
+    print(timer)
+main()
