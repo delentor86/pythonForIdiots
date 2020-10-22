@@ -27,7 +27,7 @@ def countdown(t):
 
 
 # function call and assigned returned number to t
-t = input("Enter time: ")
+t = rand_numbers() * 60
 
 # function call
 countdown(int(t))
