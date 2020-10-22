@@ -20,14 +20,15 @@ def rand_numbers():
 def countdown(t):
     # while loop for countdown
     while t:
-        mins, secs = divmod(t, 60)
-        t = '{:02d}:{:02d}'.format(mins, secs)
-        print(t)
-        time.sleep(1)
+      mins, secs = divmod(t, 60)
+      timer = '{:02d}:{:02d}'.format(mins, secs)
+      print(timer, end='\r')
+      time.sleep(1)
+      t -= 1
+
 
 
 # function call and assigned returned number to t
-t = rand_numbers() * 60
-
+t = rand_numbers() 
 # function call
-countdown(int(t))
+
